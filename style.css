@@ -1,0 +1,446 @@
+  @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+  }
+
+
+  /* ---------- NAVBAR ----------*/
+  nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    width: 100%;
+    padding: 10px 4%;
+    z-index: 9999;
+    overflow-x: none;
+  }
+
+  nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+  }
+
+  nav a{
+    color: #E4E9F7;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.6em;
+    position: relative;
+  }
+
+  nav a span{
+    color: #0096d2;
+  }
+
+  nav ul li a{
+    color: #E4E9F7;
+    text-decoration: none;
+    font-size: 1em;
+    position: relative;
+  }
+
+  nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #0096d2;
+    position: absolute;
+    left: -2px;
+    bottom: -3px;
+    transition: 0.4s ease;
+  }
+
+  nav ul li a:hover::after{
+    width: 100%;
+  }
+
+  nav ul li a i{
+    position: relative;
+    font-size: .9em;
+    left: -5px;
+    bottom: 2px;
+  }
+  /*------------------------------*/
+
+
+
+
+  /* ---------- INICIO ---------- */
+  .inicio{
+    position: relative;
+    width: 100%;
+    height: 91vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+  }
+
+  .inicio .texto-presentacion{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    font-size: 3.1em;
+    font-weight: 800;
+    color: #0096d2;
+  }
+
+  .inicio::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(to top, #11101d,transparent);
+    z-index: 10;
+  }
+
+  .inicio img{
+    position: absolute;
+    width: 100%;
+    height: 91vh;
+    object-fit: cover;
+  } 
+
+  .animate-text-name{
+    background-color: transparent;
+    text-shadow: 20px 20px 40px rgba(0, 0, 0, 0.9);
+    animation: slide-in 1.8s ease forwards, floatText 3s ease-in-out infinite;
+  }
+
+
+  .animate-text{
+    color: #fff;
+    background-color: transparent;
+    text-shadow: 20px 20px 40px rgba(0, 0, 0, 0.9);
+    animation: slide-in 1s ease forwards, floatText 3s ease-in-out infinite;
+  }
+
+
+
+  @keyframes slide-in{
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
+
+  @keyframes floatText {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+  }
+  /*------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* --------- LIGHTS ---------- */
+  .glowing {
+    position: absolute;
+    min-width: 700px;
+    height: 400px;
+    margin: -150px;
+    transform-origin: bottom;
+    animation: colorChange 5s linear infinite;
+  }
+  
+  .glowing:nth-child(even) {
+    transform-origin: left;
+  }
+  
+  @keyframes colorChange {
+    0% {
+      filter: hue-rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  .glowing span {
+    position: absolute;
+    top: calc(20px * var(--i));
+    left: calc(20px * var(--i));
+    bottom: calc(20px * var(--i));
+    right: calc(20px * var(--i));
+  }
+  
+  .glowing span::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    width: 10px;
+    height: 10px;
+    background: #f00;
+    border-radius: 50%;
+  }
+  
+  .glowing span:nth-child(3n + 1)::before {
+    background: rgba(134,255,0,1);
+    box-shadow: 0 0 20px rgba(134,255,0,1),
+      0 0 40px rgba(134,255,0,1),
+      0 0 60px rgba(134,255,0,1),
+      0 0 80px rgba(134,255,0,1),
+      0 0 0 8px rgba(134,255,0,.1);
+  }
+  
+  .glowing span:nth-child(3n + 2)::before {
+    background: rgba(255,214,0,1);
+    box-shadow: 0 0 20px rgba(255,214,0,1),
+      0 0 40px rgba(255,214,0,1),
+      0 0 60px rgba(255,214,0,1),
+      0 0 80px rgba(255,214,0,1),
+      0 0 0 8px rgba(255,214,0,.1);
+  }
+  
+  .glowing span:nth-child(3n + 3)::before {
+    background: rgba(0,226,255,1);
+    box-shadow: 0 0 20px rgba(0,226,255,1),
+      0 0 40px rgba(0,226,255,1),
+      0 0 60px rgba(0,226,255,1),
+      0 0 80px rgba(0,226,255,1),
+      0 0 0 8px rgba(0,226,255,.1);
+  }
+  
+  .glowing span:nth-child(3n + 1) {
+    animation: animate 10s alternate infinite;
+  }
+  
+  .glowing span:nth-child(3n + 2) {
+    animation: animate-reverse 3s alternate infinite;
+  }
+  
+  .glowing span:nth-child(3n + 3) {
+    animation: animate 8s alternate infinite; 
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: rotate(180deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes animate-reverse {
+    0% {
+      transform: rotate(360deg);
+    }
+    
+    50% {
+      transform: rotate(180deg);
+    }
+    
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  /*------------------------------------*/
+
+
+  .contenido{
+    display: flex;
+    flex-direction: column;
+    background-color: #11101d;
+}
+
+
+  /* --------- ABOUT ---------- */
+  .about{
+    padding-block: 10em;
+  }
+
+  .img-about{
+    max-width: 300px;
+    min-width: 80px;
+  }
+
+  .img-about img{
+    position: relative;
+    width: 100%;
+    border-radius: 100%;
+  }
+
+  .about-content{
+    flex-wrap: wrap;
+    border: #0096d2 solid 2px;
+    color: #0096d2;
+  }
+
+  section{
+    padding: 50px 10%;
+  }
+  .about-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    /* margin-top: 2rem; */
+  }
+   
+  .about-img{
+    animation: slide-in 1s ease forwards, floatText 2s ease-in-out infinite;
+  }
+
+  .about-img img:hover{
+    transform: scale(0.9);
+    transition: 0.2s;
+  }
+
+  .about-img img{
+    width: 70%;
+    border-radius: 100%;
+  }
+
+  .about-text{
+    color: #fff;
+    font-weight: 400;
+  }
+
+  .tab-titles{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0 25px;
+  }
+
+  .tab-links{
+    margin-right: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #0096d2;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    transition: 0.5s;
+  }
+
+  .tab-links.active-link::after{
+    width: 40%;
+  }
+
+  .tab-contents ul li{
+    width: 100%;
+    list-style: none;
+    margin: 10px 0px;
+  }
+
+  .tab-contents ul li span{
+    color: #0096d2;
+    font-size: 14px;
+  }
+
+  .tab-contents ul li.proximamente{
+    margin-top: 25px;
+    color: #828282;
+  }
+
+  .tab-contents ul li.proximamente span{
+    color: #1a4251;
+  }
+
+  .tab-contents{
+    display: none;
+  }
+
+  .tab-contents.active-tab{
+    display: block;
+  }
+
+
+  /*------------------------------------*/
+
+
+
+
+  /* --------- MEDIA QUERY --------- */  
+  nav .fas{
+    display: none;
+    color: #E4E9F7;
+  }
+
+  /* @media (max-width: 950px) {
+    nav .fas{
+      display: block;
+      font-size: 25px;
+    }
+    nav ul{
+      background-color: #11101d;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      padding-top: 50px;
+    }
+  } */
+
+  @media (max-width: 710px) {
+    .about-container {
+      grid-template-columns: 1fr;
+    }
+    .about-img {
+      display: flex;
+      justify-content: center;
+    }
+    .about-img img {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .inicio .texto-presentacion {
+      font-size: 2.5em;
+    }
+  }
+  /*------------------------------------*/
